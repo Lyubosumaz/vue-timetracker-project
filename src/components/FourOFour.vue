@@ -37,7 +37,7 @@ import { Options, Vue } from 'vue-class-component';
         msg: String,
     },
 })
-export default class HelloWorld extends Vue {
+export default class FourOFour extends Vue {
     msg!: string;
 }
 </script>
