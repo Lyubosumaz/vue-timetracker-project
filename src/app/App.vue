@@ -1,5 +1,6 @@
 <template>
-    <FormAddingTime />
+    <!-- v-model="event.title" -->
+    <BaseInput :label="Title" type="text" />
     <img alt="Vue logo" src="../assets/images/logo.png" />
     <FourOFour msg="Welcome to Your Vue.js + TypeScript App" />
 </template>
@@ -7,12 +8,12 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import FourOFour from '../components/FourOFour.vue';
-import FormAddingTime from '../components/FormAddingTime.vue';
+import BaseInput from '../components/BaseInput.vue';
 
 @Options({
     components: {
         FourOFour,
-        FormAddingTime,
+        BaseInput,
     },
 })
 export default class App extends Vue {}
