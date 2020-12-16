@@ -13,16 +13,13 @@ export default {
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Nunito+Sans:400,700"
+        rel: "stylesheet"
       }
     ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    "@/assets/scss/main.scss"
-  ],
+  css: ["@/assets/scss/main.scss"],
 
   styleResources: {
     scss: ["~/assets/scss/main.scss"]
