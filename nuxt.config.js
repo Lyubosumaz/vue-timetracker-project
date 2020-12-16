@@ -21,9 +21,12 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    // SCSS file in the project
-    "~/assets/main.scss"
+    "@/assets/scss/main.scss"
   ],
+
+  styleResources: {
+    scss: ["~/assets/scss/main.scss"]
+  },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -33,6 +36,8 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    // https://github.com/nuxt-community/style-resources-module/
+    "@nuxtjs/style-resources",
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/vuetify
