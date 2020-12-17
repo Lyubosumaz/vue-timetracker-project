@@ -8,7 +8,8 @@
         </v-flex>
       </v-layout>
 
-      <PersonalReports :currentDay="day"></PersonalReports>
+      <!-- :currentDay="day" -->
+      <PersonalReports></PersonalReports>
     </template>
     <template v-if="currentTab === 'tab-Statistics'">
       <h1>Statistics</h1>
@@ -25,19 +26,19 @@ export default {
   components: {
     Logo,
     VuetifyLogo,
-    PersonalReports
+    PersonalReports,
   },
   props: {
     currentDay: {
       required: false,
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   computed: {
     currentTab() {
       return "tab-Reports";
-    }
-  }
+    },
+  },
 };
 </script>

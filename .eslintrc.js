@@ -7,11 +7,11 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  extends: 'standard',
-  // extends: [
-  //   '@nuxtjs',
-  //   'plugin:nuxt/recommended'
-  // ],
+  extends: [
+    'standard',
+    '@nuxtjs',
+    'plugin:vue/recommended'
+  ],
   plugins: [
   ],
   // add your custom rules here
