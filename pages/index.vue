@@ -9,7 +9,7 @@
       </v-layout>
 
       <!-- :currentDay="day" -->
-      <PersonalReports></PersonalReports>
+      <PersonalReports />
     </template>
     <template v-if="currentTab === 'tab-Statistics'">
       <h1>Statistics</h1>
@@ -18,27 +18,27 @@
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
-import VuetifyLogo from "~/components/VuetifyLogo.vue";
-import PersonalReports from "~/components/table/PersonalReports.vue";
+// import Logo from '~/components/Logo.vue'
+// import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import PersonalReports from '~/components/table/PersonalReports.vue'
 
 export default {
   components: {
-    Logo,
-    VuetifyLogo,
+    // Logo,
+    // VuetifyLogo,
     PersonalReports,
   },
   props: {
     currentDay: {
       required: false,
       type: String,
-      default: "",
+      default: '',
     },
   },
   computed: {
-    currentTab() {
-      return "tab-Reports";
+    currentTab () {
+      return 'tab-Reports'
     },
   },
-};
+}
 </script>
