@@ -14,10 +14,22 @@ func trimFirstRune(s string) string {
 	return s[i:]
 }
 
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+    if r.URL.Path != "/hello-world" {
+        http.Error(w, "404 not found.", http.StatusNotFound)
+        return
+    }
+
+    if r.Method != "GET" {
+        http.Error(w, "Method is not supported.", http.StatusNotFound)
+        return
+    }
+
+	w.Write([]byte("Hello World!!"))
+}
+
 func main() {
-	http.HandleFunc("/hello-world", func (w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("hello world"))
-	})
+	http.HandleFunc("/hello-world", helloHandler)
 
 	fmt.Printf("Starting server at port %s\n", trimFirstRune(port))
  	if err := http.ListenAndServe(port, nil); err != nil {
