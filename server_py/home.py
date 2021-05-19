@@ -1,6 +1,6 @@
 print(2*2)
 a = 5
-print(a+a )
+print(a+a)
 my_string = 'asdfg'
 separator = '||'
 print(my_string + ':')
