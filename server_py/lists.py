@@ -1,4 +1,4 @@
-myList = ['a','b','c','d','e']
+myList = ['a', 'b', 'c', 'd', 'e']
 listTwo = ['x', 'y', 'z']
 print(len(myList))
 print(myList[1:], 'grab everything from index 1')
@@ -16,7 +16,7 @@ print(myList[5][1], 'targetting nesting')
 print('after the reassignment:', myList)    # ['NEW ITEM','c','d','e','APPEND ITEM',['x', 'y', 'z'],'x', 'y']
 
 # LIST COMPREHENSION
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 first_col = [row[0] for row in matrix]
 print(first_col)                            # [1, 4, 7]
 
