@@ -2,6 +2,15 @@
 
 ## Build Setup
 
+```
+conda create --name myDjangoEnv django
+conda info --envs
+conda activate myDjangoEnv
+python manage.py runserver
+
+conda deactivate
+```
+
 ```bash
 # install dependencies
 $ npm install
