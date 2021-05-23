@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jango Logo</title>
+        <link rel="stylesheet" href={% static 'css/first_app.css' %}>
+    </head>
+    <body>
+        <main>
+            <h1>hi, this is jango logo</h1>
+            <img src="{% static 'images/jango_logo.png' %}" alt="Uh Oh, didn't show!">
+            <p>{{ insert_me }}</p>
+        </main>
+    </body>
+</html>
