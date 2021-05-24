@@ -11,6 +11,23 @@ python manage.py runserver
 conda deactivate
 ```
 
+```
+DB
+conda activate myDjangoEnv
+python3 manage.py migrate
+python3 manage.py makemigrations first_app
+python3 manage.py migrate
+python3 manage.py shell
+from first_app.models import Topic
+print(Topic.objects.all())
+t = Topic(top_name="Social Network")
+t.save()
+print(Topic.objects.all())
+
+python3 manage.py createsuperuser
+
+```
+
 ```bash
 # install dependencies
 $ npm install
