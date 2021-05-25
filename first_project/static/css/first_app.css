@@ -6,3 +6,8 @@ main {
 img {
     width: 250px;
 }
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+}

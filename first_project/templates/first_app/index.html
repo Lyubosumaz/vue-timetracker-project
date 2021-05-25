@@ -5,14 +5,38 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jango Logo</title>
+        <title>Django Logo</title>
         <link rel="stylesheet" href={% static 'css/first_app.css' %}>
     </head>
     <body>
         <main>
-            <h1>hi, this is jango logo</h1>
+            <h1>Hi welcome to Django level two</h1>
             <img src="{% static 'images/jango_logo.png' %}" alt="Uh Oh, didn't show!">
             <p>{{ insert_me }}</p>
+
+            <div class="django-two">
+                {% if access_records %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Site Name</th>
+                            <th>Data Accessed</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for acc in access_records %}
+                        <tr>
+                            <td>{{ acc.name }}</td>
+                            <td>{{ acc.date }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>NO ACCESS RECORDS FOUND!</p>
+                {% endif %}
+            </div>
         </main>
     </body>
 </html>
