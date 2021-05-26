@@ -1,6 +1,8 @@
+from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponse
 from first_app.models import AccessRecord, Topic, Webpage
+from first_app.form import FormName
 
 
 def index(request):
@@ -9,3 +11,14 @@ def index(request):
         'insert_me': 'Now I am coming from first_app/index.html'
     }
     return render(request, 'first_app/index.html', context)
+
+
+def form_name_view(request):
+    form = FormName()
+
+    if request.method == 'POST':
+        form = FormName(request.POST)
+
+    # if form.is_valid():
+
+    return render(request, 'first_app/form.html', {'formname': form})
