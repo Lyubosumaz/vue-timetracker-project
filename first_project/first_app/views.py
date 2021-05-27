@@ -1,9 +1,6 @@
-from urllib import request
 from django.shortcuts import render
-from django.http import HttpResponse
-from first_app.models import AccessRecord, Topic, Webpage
-# TODO SHOULD BE .forms
-from first_app.form import FormName
+from first_app.models import AccessRecord
+from first_app.forms import FormName
 
 
 def index(request):
@@ -33,6 +30,5 @@ def other(request):
     return render(request, 'first_app/other.html')
 
 
-# TODO should be templates
-def retrive_url_template(request):
-    return render(request, 'first_app/retrieve_url_template.html')
+def retrieve_url_templates(request):
+    return render(request, 'first_app/retrieve_url_templates.html')

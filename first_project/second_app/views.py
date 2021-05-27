@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from second_app.models import User
-# TODO SHOULD BE .forms
-from second_app.form import NewUserForm
-# Create your views here.
+from second_app.forms import NewUserForm
 
 
 def index(request):

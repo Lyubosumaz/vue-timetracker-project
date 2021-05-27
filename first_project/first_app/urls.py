@@ -9,5 +9,5 @@ urlpatterns = [
     path('formname/', views.form_name_view, name='form_name'),
     path('base/', views.base, name='base'),
     path('other/', views.other, name='other'),
-    path('retrive/', views.retrive_url_template, name='retrive_url_template'),
+    path('retrive/', views.retrieve_url_templates, name='retrieve_url_templates'),
 ]
