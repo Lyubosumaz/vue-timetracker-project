@@ -22,4 +22,17 @@ def form_name_view(request):
 
     # if form.is_valid():
 
-    return render(request, 'first_app/form.html', {'formname': form})
+    return render(request, 'first_app/formname.html', {'formname': form})
+
+
+def base(request):
+    return render(request, 'first_app/base.html')
+
+
+def other(request):
+    return render(request, 'first_app/other.html')
+
+
+# TODO should be templates
+def retrive_url_template(request):
+    return render(request, 'first_app/retrieve_url_template.html')
