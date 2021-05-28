@@ -1,6 +1,38 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="en">
+{% extends "first_app/base.html" %}
+    {% load static %}
+    {% block body_block %}
+        <main>
+            <h1>Hi welcome to Django level two</h1>
+            <img src="{% static 'images/jango_logo.png' %}" alt="Uh Oh, didn't show!">
+            <p>{{ insert_me }}</p>
+        
+            <div class="django-two">
+                {% if access_records %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Site Name</th>
+                            <th>Data Accessed</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+                        {% for acc in access_records %}
+                        <tr>
+                            <td>{{ acc.name }}</td>
+                            <td>{{ acc.date }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>NO ACCESS RECORDS FOUND!</p>
+                {% endif %}
+            </div>
+        </main>
+    {% endblock %}
+<!-- <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,4 +71,4 @@
             </div>
         </main>
     </body>
-</html>
+</html> -->
