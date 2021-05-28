@@ -5,8 +5,10 @@
         <main>
             <h1>Hi welcome to Django level two</h1>
             <img src="{% static 'images/jango_logo.png' %}" alt="Uh Oh, didn't show!">
-            <p>{{ insert_me }}</p>
-        
+            <p>{{ insert_me|title }} "{{ insert_me_too }}"</p>
+            <p>{{ number|add:"99" }}</p>
+            <p>{{ insert_me|cut:"now i am" }} "{{ insert_me_too }}"</p>
+            
             <div class="django-two">
                 {% if access_records %}
                 <table>

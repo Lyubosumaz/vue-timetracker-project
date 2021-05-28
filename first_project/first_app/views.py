@@ -6,7 +6,9 @@ from first_app.forms import FormName
 def index(request):
     context = {
         'access_records': AccessRecord.objects.order_by('date'),
-        'insert_me': 'Now I am coming from first_app/index.html'
+        'insert_me': 'now i am coming from',
+        'insert_me_too': 'first_app/index.html',
+        'number': '1',
     }
     return render(request, 'first_app/index.html', context)
 
