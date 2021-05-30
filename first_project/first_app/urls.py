@@ -10,4 +10,7 @@ urlpatterns = [
     path('base/', views.base, name='base'),
     path('other/', views.other, name='other'),
     path('retrive/', views.retrieve_url_templates, name='retrieve_url_templates'),
+    path('register/', views.registration, name='registration'),
+    # path('register/', views.registration, name='registration'),
+    # path('register/', views.registration, name='registration'),
 ]
