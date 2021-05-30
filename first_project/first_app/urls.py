@@ -11,6 +11,5 @@ urlpatterns = [
     path('other/', views.other, name='other'),
     path('retrive/', views.retrieve_url_templates, name='retrieve_url_templates'),
     path('register/', views.registration, name='registration'),
-    # path('register/', views.registration, name='registration'),
-    # path('register/', views.registration, name='registration'),
+    path('user_login/', views.user_login, name='login'),
 ]

@@ -23,4 +23,6 @@ urlpatterns = [
     re_path(r'^home/', include('first_app.urls')),
     re_path(r'^help/', include('second_app.urls')),
     re_path(r'^admin/', admin.site.urls),
+    re_path(r'^logout/$', views.user_logout, name='logout'),
+    re_path(r'^special/', views.special, name='special'),
 ]
