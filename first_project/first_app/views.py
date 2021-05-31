@@ -1,12 +1,12 @@
-import imp
 from django.shortcuts import render
 from first_app.models import AccessRecord
 from first_app.forms import FormName, UserForm, UserProfileInfoForm
 
 from django.http import HttpResponseRedirect, HttpResponse
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 
 
 def index(request):
@@ -78,7 +78,7 @@ def registration(request):
 
 
 def user_login(request):
-    if request == 'POST':
+    if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
 
@@ -87,21 +87,21 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse('index'))
+                return redirect('/other/')
             else:
-                return HttpResponseRedirect("ACCOUNT NOT ACTIVE")
+                return HttpResponse("ACCOUNT NOT ACTIVE")
         else:
             print("Someone tried to login and failed!")
             print("Username: {} and password {}".format(username, password))
             return HttpResponse("invalid login details supplied!")
     else:
-        render(request, 'first_app/login.html', {})
+        return render(request, 'first_app/login.html', {})
 
 
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('index'))
+    return redirect('/')
 
 
 @login_required

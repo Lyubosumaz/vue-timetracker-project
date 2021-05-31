@@ -6,7 +6,7 @@
 conda create --name myDjangoEnv django
 conda info --envs
 conda activate myDjangoEnv
-python manage.py runserver
+python3 manage.py runserver
 
 conda deactivate
 ```
