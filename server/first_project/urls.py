@@ -26,3 +26,13 @@ urlpatterns = [
     re_path(r'^logout/$', views.user_logout, name='logout'),
     re_path(r'^special/', views.special, name='special'),
 ]
+
+# from django.contrib import admin
+# from django.urls import path, include, re_path
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     re_path(r'^', include('index.urls')),
+
+#     # path('', include('index.urls')),
+# ]

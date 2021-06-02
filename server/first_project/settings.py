@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'first_app',
     'second_app',
+    'webpack_loader',
+    'index.apps.IndexConfig',
 ]
 
 MIDDLEWARE = [
@@ -58,9 +61,10 @@ ROOT_URLCONF = 'first_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            TEMPLATE_DIR,
-        ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
+        # 'DIRS': [
+        #     TEMPLATE_DIR,
+        # ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,14 +136,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
 
-# Media files (Images)
-MEDIA_ROOT = MEDIA_DIR
+# # Media files (Images)
+# MEDIA_ROOT = MEDIA_DIR
+# MEDIA_URL = '/media/'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'public/static/')
+
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'public/media/')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'public/static_dev/'),
+    os.path.join(BASE_DIR, "ui/dist"),
+)
 
 LOGIN_URL = '/first_app/user_loging'
 
@@ -147,3 +162,19 @@ LOGIN_URL = '/first_app/user_loging'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Directorio de Vue
+UI_DIR = os.path.join(BASE_DIR, 'ui/')
+
+# Opciones de webpack-loader
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'webpack_bundles/',
+        'STATS_FILE': os.path.join(UI_DIR, 'webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
+        'LOADER_CLASS': 'webpack_loader.loader.WebpackLoader',
+    }
+}
